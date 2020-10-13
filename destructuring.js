@@ -20,6 +20,7 @@ var carDetails = {
 /*
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
+let {color, make, model, year} = carDetails
 
 //Code Here
 
@@ -34,8 +35,9 @@ var carDetails = {
 */
 
 function greeting( obj ) {
+
   //Code Here
-  
+  let {title, firstName, lastName} = obj
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -53,6 +55,14 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
+let totalPopulation = function(object) {
+  let {utah, california, texas, arizona} = object
+  return utah + california + texas + arizona 
+}
+
+
+
+
 //Code Here
 
 
@@ -67,6 +77,13 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
+function ingredients(object) {
+  let {carb, fat, protein} = object
+let arr = []
+
+arr.push(carb, fat, protein)
+return arr
+}
 //Code Here
 
 
@@ -84,7 +101,16 @@ function greeting( obj ) {
   The object properties will be named first, second, and third and their values will be numbers.
   Find the smallest number of the three and return that number.
 */
-
+function largeNumbers({first, second, third}) {
+  if(first < second && first < third){ 
+  return first 
+  } else if(second < first && second < third) {
+    return second 
+    } else {
+      return third
+    }
+    }
+  
 //Code Here
 
 
@@ -96,7 +122,16 @@ function greeting( obj ) {
   The object properties will be named a, b, and c and their values will be arrays of numbers.
   Find the longest array and return that array.
 */
-
+function numberGroups({ a, b, c}) {
+  let megaArray = [a, b, c];
+  let longest =[];
+  megaArray.forEach(function (element, index, array) {
+    if (element.length > longest.length) {
+      longest = element;
+    }
+  });
+  return longest;
+}
 //Code Here
 
 
